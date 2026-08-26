@@ -1,4 +1,4 @@
-    package edu.udelp.Nodo;             
+package edu.udelp.nodo;
 
 public class Nodo {
 
@@ -14,6 +14,10 @@ public class Nodo {
         return dato;
     }
 
+    public void setDato(int dato) {
+        this.dato = dato;
+    }
+
     public Nodo getEnlace() {
         return enlace;
     }
@@ -22,7 +26,9 @@ public class Nodo {
         this.enlace = enlace;
     }
 
+    @Override
     public String toString() {
-        return dato + " - " +  enlace.toString();
+        return String.valueOf(dato);
     }
+
 }
