@@ -1,34 +1,28 @@
-package nodo;
+    package edu.udelp.Nodo;             
 
+public class Nodo {
 
-public class nodo {
-    // ATRIBUTOS
     private int dato;
-    private nodo enlace;
+    private Nodo enlace;
 
-    // CONSTRUCTOR
-    public nodo(int dato){
+    public Nodo(int dato) {
         this.dato = dato;
+        this.enlace = null;
     }
 
-    // MODIFICADOR (no sé si se llama así)
-    public int getDato(){
+    public int getDato() {
         return dato;
     }
 
-    public void setDato(int dato){
-        this.dato = dato;
-    }
-
-    public nodo getEnalce(){
+    public Nodo getEnlace() {
         return enlace;
     }
 
-    public void setEnlace(nodo enlace){
+    public void setEnlace(Nodo enlace) {
         this.enlace = enlace;
     }
 
-    public String toString(){
-        return dato + " - " + enlace.toString();
+    public String toString() {
+        return dato + " - " +  enlace.toString();
     }
 }

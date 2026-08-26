@@ -1,26 +1,25 @@
+import java.util.Stack;
 
 public class Main {
 
     public static void main(String[] args) {
-        String ecuacion = " ";
-        Parentesis par = new Parentesis();
-        boolean resultado = par.evaluar(ecuacion, '(');
+        Stack stack = new Stack();
+        imprime(stack);
 
-        if(resultado){
-            System.out.println("La ecuacion es correcta");
-        } else {
-            System.out.println("La ecuacion es incorrecta");
-        }
-    
-}
+        stack.push(5);
+        imprime(stack);
 
-    private static class Parentesis {
+        stack.push(6);
+        imprime(stack);
 
-        public Parentesis() {
-        }
+        stack.push(7);
+        imprime(stack);
 
-        private boolean evaluar(String ecuacion, char c) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
+        stack.push(8);
+        imprime(stack);
+    }
+
+    private static void imprime(Stack stack) {
+        System.out.println(stack);
     }
 }
