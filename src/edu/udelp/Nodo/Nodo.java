@@ -1,4 +1,4 @@
-package edu.udelp.nodo;
+package edu.udelp.Nodo;
 
 public class Nodo {
 
