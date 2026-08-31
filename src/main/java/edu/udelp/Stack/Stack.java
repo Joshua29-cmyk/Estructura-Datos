@@ -1,11 +1,11 @@
 package edu.udelp.Stack;
-import edu.udelp.nodo.Nodo;
+import edu.udelp.Nodo.Nodo;
 import edu.udelp.Exception.UdelpException;
 
 
 public class Stack {
 
-    private nodo top;
+    private Nodo top;
     private int size;
 
     public Stack() {
