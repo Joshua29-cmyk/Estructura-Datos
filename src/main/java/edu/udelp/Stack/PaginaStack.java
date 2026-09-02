@@ -1,16 +1,15 @@
 package edu.udelp.Stack;
+
 import edu.udelp.Model.Pagina;
-import edu.udelp.Nodo.Nodo;
 import edu.udelp.Nodo.NodoPagina;
 import edu.udelp.Exception.UdelpException;
 
-public class PaginaStack{
+public class PaginaStack {
 
-    
     private NodoPagina top;
     private int size;
 
-    public PaginaStack () {
+    public PaginaStack() {
         top = null;
         size = 0;
     }
@@ -25,13 +24,13 @@ public class PaginaStack{
 
     public Pagina peek() {
         if (isEmpty()) {
-            throw new UdelpException("Pila vacia");
+            throw new UdelpException("Pila vacía");
         }
         return top.getDato();
     }
 
     public void push(Pagina dato) {
-        Nodo nuevo = new Nodo(dato);
+        NodoPagina nuevo = new NodoPagina(dato);
         nuevo.setEnlace(top);
         top = nuevo;
         size++;
@@ -39,7 +38,7 @@ public class PaginaStack{
 
     public Pagina pop() {
         if (isEmpty()) {
-            throw new UdelpException("Pila vacia");
+            throw new UdelpException("Pila vacía");
         }
         Pagina dato = top.getDato();
         top = top.getEnlace();
@@ -50,7 +49,7 @@ public class PaginaStack{
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
-        Nodo aux = top;
+        NodoPagina aux = top;
         while (aux != null) {
             s.append(aux.getDato()).append(" -> ");
             aux = aux.getEnlace();

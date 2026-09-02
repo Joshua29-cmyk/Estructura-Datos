@@ -1,7 +1,7 @@
 package edu.udelp.Stack;
+
 import edu.udelp.Nodo.Nodo;
 import edu.udelp.Exception.UdelpException;
-
 
 public class Stack {
 
@@ -23,13 +23,13 @@ public class Stack {
 
     public int peek() {
         if (isEmpty()) {
-            throw new UdelpException("Pila vacia");
+            throw new UdelpException("Pila vacía");
         }
         return top.getDato();
     }
 
     public void push(int dato) {
-        nodo nuevo = new nodo(dato);
+        Nodo nuevo = new Nodo(dato);
         nuevo.setEnlace(top);
         top = nuevo;
         size++;
@@ -37,7 +37,7 @@ public class Stack {
 
     public int pop() {
         if (isEmpty()) {
-            throw new UdelpException("Pila vacia");
+            throw new UdelpException("Pila vacía");
         }
         int dato = top.getDato();
         top = top.getEnlace();
@@ -48,7 +48,7 @@ public class Stack {
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
-        nodo aux = top;
+        Nodo aux = top;
         while (aux != null) {
             s.append(aux.getDato()).append(" -> ");
             aux = aux.getEnlace();
