@@ -1,5 +1,5 @@
 package src.main.java.edu.udelp.queue;
-import edu.udelp.Nodo.Nodo;
+import src.main.java.edu.udelp.Nodo.Nodo;
 
 public class Queue {
 

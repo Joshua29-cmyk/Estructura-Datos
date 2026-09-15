@@ -1,34 +1,27 @@
-package edu.udelp.Nodo;
+package src.main.java.edu.udelp.Nodo;
+
+import src.main.java.edu.udelp.Model.Pedidos;
 
 public class Nodo {
 
-    private int dato;
-    private Nodo enlace;
+    private Pedidos pedido;
+    private Nodo siguiente;
 
-    public Nodo(int dato) {
-        this.dato = dato;
-        this.enlace = null;
+    public Nodo(Pedidos pedido) {
+        this.pedido = pedido;
+        this.siguiente = null;
     }
 
-    public int getDato() {
-        return dato;
+    public Pedidos getPedido() {
+        return pedido;
     }
 
-    public void setDato(int dato) {
-        this.dato = dato;
+    public Nodo getSiguiente() {
+        return siguiente;
     }
 
-    public Nodo getEnlace() {
-        return enlace;
+    public void setSiguiente(Nodo siguiente) {
+        this.siguiente = siguiente;
     }
-
-    public void setEnlace(Nodo enlace) {
-        this.enlace = enlace;
-    }
-
-    @Override
-    public String toString() {
-        return String.valueOf(dato);
-    }
-
 }
+

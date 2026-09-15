@@ -1,6 +1,6 @@
-package edu.udelp.Stack;
+package src.main.java.edu.udelp.Stack;
 
-import edu.udelp.Nodo.Nodo;
+import src.main.java.edu.udelp.Nodo.Nodo;
 import edu.udelp.Exception.UdelpException;
 
 public class Stack {

@@ -3,7 +3,7 @@ package src.main.java.edu.udelp.Nodo;
 public class NodoRPN {
 
     private Object dato;
-        private edu.udelp.Nodo.Nodo siguiente;
+        private edu.udelp.Nodo siguiente;
 
         public NodoRPN(Object dato) {
             this.dato = dato;
