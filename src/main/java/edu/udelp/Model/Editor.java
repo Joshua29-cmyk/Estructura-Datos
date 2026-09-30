@@ -24,6 +24,9 @@ public class Editor {
                 continue;
             }
 
+
+
+
             System.out.println();
 
             switch (opcion) {
