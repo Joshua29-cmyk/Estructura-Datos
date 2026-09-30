@@ -1,6 +1,6 @@
-package edu.udelp.Nodo;
+package src.main.java.edu.udelp.Nodo;
 
-import edu.udelp.Model.Paqueteria;
+import src.main.java.edu.udelp.Model.Paqueteria;
 
 public class NodoPaqueteria {
 
@@ -8,8 +8,16 @@ public class NodoPaqueteria {
     public NodoPaqueteria siguiente;
     public Paqueteria NodoPaquete;
 
-    public NodoPaqueteria(Paqueteria paquete) {
+    public <Paqueteria extends src.main.java.edu.udelp.Model.Paqueteria> NodoPaqueteria(Paqueteria paquete) {
         this.paquete = paquete;
         this.siguiente = null;
+    }
+
+    public void setSiguiente(NodoPaqueteria siguiente) {
+        this.siguiente = siguiente;
+    }
+
+    public NodoPaqueteria getSiguiente() {
+        return siguiente;
     }
 }

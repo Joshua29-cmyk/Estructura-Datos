@@ -1,4 +1,4 @@
-package edu.udelp.Model;
+package src.main.java.edu.udelp.Model;
 
 public class Paqueteria {
 

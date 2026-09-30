@@ -1,7 +1,7 @@
 package src.main.java.edu.udelp;
 
-import edu.udelp.Model.Paqueteria;
-import edu.udelp.Stack.StackPaqueteria;
+import src.main.java.edu.udelp.Model.Paqueteria;
+import src.main.java.edu.udelp.Stack.StackPaqueteria;
 
 import java.util.Scanner;
 

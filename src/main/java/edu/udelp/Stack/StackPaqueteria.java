@@ -1,14 +1,13 @@
-package edu.udelp.Stack;
+package src.main.java.edu.udelp.Stack;
 
-import edu.udelp.Model.Paqueteria;
-import edu.udelp.Nodo.NodoPaqueteria;
+import src.main.java.edu.udelp.Model.Paqueteria;
+import src.main.java.edu.udelp.Nodo.NodoPaqueteria;
 
 public class StackPaqueteria {
 
     private NodoPaqueteria tope;
     private int cantidad;
 
-    // Se corrigió el nombre y se eliminó el void
     public StackPaqueteria() {
         this.tope = null;
         this.cantidad = 0;
@@ -16,7 +15,7 @@ public class StackPaqueteria {
 
     public void push(Paqueteria paquete) {
         NodoPaqueteria nuevo = new NodoPaqueteria(paquete);
-        nuevo.siguiente = tope;
+        nuevo.setSiguiente(tope);
         tope = nuevo;
         cantidad++;
     }
@@ -26,9 +25,8 @@ public class StackPaqueteria {
             System.out.println("No es posible retirar: el almacén está vacío.");
             return null;
         }
-        // Se cambió tope.NodoPaquete por tope.paquete
-        Paqueteria paqueteRetirado = tope.paquete;
-        tope = tope.siguiente;
+        Paqueteria paqueteRetirado = tope.getPaquete();
+        tope = tope.getSiguiente();
         cantidad--;
         return paqueteRetirado;
     }
@@ -38,8 +36,7 @@ public class StackPaqueteria {
             System.out.println("No hay paquetes en el almacén.");
             return null;
         }
-        // Se cambió tope.NodoPaquete por tope.paquete
-        return tope.paquete;
+        return tope.getPaquete();
     }
 
     public boolean isEmpty() {
@@ -57,9 +54,8 @@ public class StackPaqueteria {
         while (actual != null) {
             String etiqueta = (posicion == 1) ? " (TOPE)" : "";
             System.out.println("\n[" + posicion + "]" + etiqueta);
-            // Se cambió actual.NodoPaquete por actual.paquete
-            System.out.println(actual.paquete);
-            actual = actual.siguiente;
+            System.out.println(actual.getPaquete());
+            actual = actual.getSiguiente();
             posicion++;
         }
         System.out.println("\n--------------------------------------------------");
@@ -68,10 +64,10 @@ public class StackPaqueteria {
     public Paqueteria buscar(int id) {
         NodoPaqueteria actual = tope;
         while (actual != null) {
-            if (actual.paquete != null && actual.paquete.getId() == id) {
-                return actual.paquete;
+            if (actual.getPaquete() != null && actual.getPaquete().getId() == id) {
+                return actual.getPaquete();
             }
-            actual = actual.siguiente;
+            actual = actual.getSiguiente();
         }
         return null;
     }
