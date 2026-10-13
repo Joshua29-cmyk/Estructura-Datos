@@ -1,27 +1,42 @@
 package src.main.java.edu.udelp.Nodo;
 
-import src.main.java.edu.udelp.Model.Pedidos;
+public class Nodo <T> {
+    //  === ATRIBUTOS ===
+    private T dato;
+    private Nodo<T> enlace;
 
-public class Nodo {
-
-    private Pedidos pedido;
-    private Nodo siguiente;
-
-    public Nodo(Pedidos pedido) {
-        this.pedido = pedido;
-        this.siguiente = null;
+    // === CONSTRUCTOR ===
+    public Nodo(T dato) {
+        this.dato = dato;
     }
 
-    public Pedidos getPedido() {
-        return pedido;
+    // === GETTERS & SETTERS
+    public T getDato() {
+        return dato;
     }
 
-    public Nodo getSiguiente() {
-        return siguiente;
+    public void setDato(T dato) {
+        this.dato = dato;
     }
 
-    public void setSiguiente(Nodo siguiente) {
-        this.siguiente = siguiente;
+    // Get Enlace: obetener el enlace del nodo
+    public Nodo<T> getEnlace() {
+        return enlace;
+    }
+
+    // Set Enlace: darle un nuevo valor al enlace
+    public void setEnlace(Nodo<T> enlace) {
+        this.enlace = enlace;
+    }
+
+    // === TO STRING ===
+    @Override
+    public String toString() {
+        if (null == enlace) {
+            return dato + "";
+        }
+        return dato + " - " + enlace.toString();
     }
 }
+
 

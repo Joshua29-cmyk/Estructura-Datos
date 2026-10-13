@@ -1,8 +1,12 @@
 package src.main.java.edu.udelp.queue;
 
+import edu.udelp.comparator.NumericComparator;
 import src.main.java.edu.udelp.Nodo.PriorityNodo;
 
 public class BooleanPriorityQueue<T> {
+
+
+
 
     // ATRIBUTOS
     private PriorityNodo<T> front;

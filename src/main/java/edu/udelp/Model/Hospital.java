@@ -101,6 +101,8 @@ public class Hospital {
         }
     }
 
+
+
     public static void mostrarPendiente() {
         System.out.println("Mostrando consultas pendientes...");
         System.out.println("Pacientes urgentes en espera: " + pacientesUrgentes);
