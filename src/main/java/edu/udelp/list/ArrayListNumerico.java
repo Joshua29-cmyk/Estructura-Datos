@@ -7,6 +7,7 @@ public class ArrayListNumerico<T> {
     private int size;
     private int increment;
 
+
     public ArrayListNumerico(int initialCapacity, int increment) {
         array = (T[]) new Object[initialCapacity];
         size = 0;

@@ -3,6 +3,8 @@ package src.main.java.edu.udelp.list;
 import edu.udelp.Exception.UdelpException;
 import src.main.java.edu.udelp.Nodo.Nodo;
 
+import java.lang.module.FindException;
+
 public class LinkedList<T> {
 
     private Nodo<T> pointer;
@@ -57,4 +59,53 @@ public class LinkedList<T> {
 
         size++;
     }
+
+
+    public T remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new UdelpException("Index out of bounds");
+        }
+
+        T obj;
+
+        // Eliminar el primer nodo
+        if (index == 0) {
+            obj = pointer.getDato();
+            pointer = pointer.getEnlace();
+        } else {
+            Nodo<T> anterior = pointer;
+
+            // Buscar el nodo anterior al que queremos eliminar
+            for (int i = 0; i < index - 1; i++) {
+                anterior = anterior.getEnlace();
+            }
+
+            // Obtener el nodo que se va a eliminar
+            Nodo<T> actual = anterior.getEnlace();
+
+            obj = actual.getDato();
+
+            // Saltar el nodo eliminado
+            anterior.setEnlace(actual.getEnlace());
+        }
+
+        size--;
+        return obj;
+    }
+
+    public T get(int index) {
+        if (index < 0 || index >= size) {
+            throw new UdelpException("Index out of bounds");
+        }
+
+        Nodo<T> actual = pointer;
+
+        for (int i = 0; i < index; i++) {
+            actual = actual.getEnlace();
+        }
+
+        return actual.getDato();
+    }
+
+
 }

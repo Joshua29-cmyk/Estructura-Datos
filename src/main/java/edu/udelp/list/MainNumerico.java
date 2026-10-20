@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class MainNumerico {
 
     // Copio mi lista para no modificar los números originales
+
+
     public static ArrayList<Integer> copiar(ArrayList<Integer> lista) {
         ArrayList<Integer> copia = new ArrayList<>(lista.size() + 1, 5);
 
