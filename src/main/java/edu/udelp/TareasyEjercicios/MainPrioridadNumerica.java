@@ -9,24 +9,27 @@ public class MainPrioridadNumerica {
 
         Scanner entrada = new Scanner(System.in);
 
+        ColaPrioridad cola = new ColaPrioridad();
 
         int opcion;
 
         do {
-            System.out.println("\n==== PRIORIDAD NUMÉRICA ====");
-            System.out.println("1. Agregar número");
-            System.out.println("2. Atender número");
+
+            System.out.println("\n==== PRIORIDAD NUMERICA ====");
+            System.out.println("1. Agregar numero");
+            System.out.println("2. Atender numero");
             System.out.println("3. Mostrar cola");
             System.out.println("4. Mostrar cantidad");
             System.out.println("5. Salir");
-            System.out.print("Elige una opción: ");
+            System.out.print("Elige una opcion: ");
 
             opcion = entrada.nextInt();
 
             switch (opcion) {
 
                 case 1:
-                    System.out.print("Ingresa el número: ");
+
+                    System.out.print("Ingresa el numero: ");
                     int numero = entrada.nextInt();
 
                     System.out.println("1. Alta");
@@ -37,44 +40,61 @@ public class MainPrioridadNumerica {
                     int prioridad = entrada.nextInt();
 
                     if (prioridad >= 1 && prioridad <= 3) {
+
                         cola.add(numero, prioridad);
-                        System.out.println("Número agregado correctamente.");
+
+                        System.out.println("Numero agregado.");
+
                     } else {
-                        System.out.println("Prioridad inválida. Debe ser 1, 2 o 3.");
+
+                        System.out.println("Prioridad incorrecta.");
                     }
+
                     break;
 
                 case 2:
+
                     if (!cola.isEmpty()) {
+
                         int atendido = cola.remove();
-                        System.out.println("Número atendido: " + atendido);
+
+                        System.out.println("Numero atendido: " + atendido);
+
                     } else {
-                        System.out.println("La cola está vacía.");
+
+                        System.out.println("La cola esta vacia.");
                     }
+
                     break;
 
                 case 3:
+
                     cola.mostrar();
+
                     break;
 
                 case 4:
-                    System.out.println("Números pendientes: " + cola.size());
+
+                    System.out.println("Numeros pendientes: " + cola.size());
+
                     break;
 
                 case 5:
+
                     System.out.println("Programa finalizado.");
+
                     break;
 
                 default:
-                    System.out.println("Opción incorrecta.");
+
+                    System.out.println("Opcion incorrecta.");
+
                     break;
             }
 
         } while (opcion != 5);
 
         entrada.close();
-
-
     }
 }
 
