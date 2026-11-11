@@ -1,4 +1,5 @@
-package src.main.java.edu.udelp.list;
+
+package src.main.java.edu.udelp.TareasyEjercicios;
 
 import java.util.Scanner;
 
@@ -7,12 +8,12 @@ public class MainPrioridadNumerica {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
-        ColaPrioridad cola = new ColaPrioridad();
+
 
         int opcion;
 
         do {
-            System.out.println("\n ==== PRIORIDAD NUMÉRICA ====");
+            System.out.println("\n==== PRIORIDAD NUMÉRICA ====");
             System.out.println("1. Agregar número");
             System.out.println("2. Atender número");
             System.out.println("3. Mostrar cola");
@@ -32,9 +33,15 @@ public class MainPrioridadNumerica {
                     System.out.println("2. Media");
                     System.out.println("3. Baja");
                     System.out.print("Ingresa la prioridad: ");
+
                     int prioridad = entrada.nextInt();
 
-                    cola.add(numero, prioridad);
+                    if (prioridad >= 1 && prioridad <= 3) {
+                        cola.add(numero, prioridad);
+                        System.out.println("Número agregado correctamente.");
+                    } else {
+                        System.out.println("Prioridad inválida. Debe ser 1, 2 o 3.");
+                    }
                     break;
 
                 case 2:
@@ -51,9 +58,7 @@ public class MainPrioridadNumerica {
                     break;
 
                 case 4:
-                    System.out.println(
-                            "Números pendientes: " + cola.size()
-                    );
+                    System.out.println("Números pendientes: " + cola.size());
                     break;
 
                 case 5:
