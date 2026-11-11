@@ -73,6 +73,8 @@ public class MainPrioridadNumerica {
         } while (opcion != 5);
 
         entrada.close();
+
+
     }
 }
 
