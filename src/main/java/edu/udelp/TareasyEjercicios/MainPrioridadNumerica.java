@@ -81,7 +81,7 @@ public class MainPrioridadNumerica {
 
                 case 5:
 
-                    System.out.println("Programa finalizado.");
+                    System.out.println("Fin del programa.");
 
                     break;
 
